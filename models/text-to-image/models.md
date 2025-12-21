@@ -42,3 +42,36 @@ Kiến trúc chính: Stable Diffusion 1.5 (SD1.5).
 | FLUX.1 [schnell]  | black-forest-labs/FLUX.1-schnell             | Private/Synthetic  | Bản rút gọn của Flux, nhanh hơn (4 steps) nhưng chất lượng thấp hơn bản dev một chút. |
 | Stable Diffusion 3| stabilityai/stable-diffusion-3-medium-diffusers | Private/Synthetic  | Bản mới nhất của StabilityAI, hiểu prompt tốt nhưng đôi khi bị lỗi giải phẫu (anatomy). |
 | PixArt-Sigma      | PixArt-alpha/PixArt-Sigma-XL-2-1024-MS       | LAION + Internal   | Model Transformer nhẹ hơn Flux nhưng chất lượng rất cao, tuân thủ prompt tốt. |
+
+
+### Alpha-VLLM/Lumina-Image-2.0
+allow_patterns=[
+    # Pipeline
+    "model_index.json",
+
+    # Scheduler (train + inference đều cần)
+    "scheduler/*",
+
+    # Core model
+    "transformer/config.json",
+    "transformer/diffusion_pytorch_model.safetensors",
+
+    # Text encoder (train BẮT BUỘC)
+    "text_encoder/config.json",
+    "text_encoder/model.safetensors",
+
+    # VAE
+    "vae/config.json",
+    "vae/diffusion_pytorch_model.safetensors",
+
+    # TOKENIZER (BẮT BUỘC cho train)
+    "tokenizer/*",
+]
+
+stabilityai/stable-diffusion-3-medium
+
+stabilityai/sdxl-base-1.0
+
+Alpha-VLLM/Lumina-Image-2.0
+
+black-forest-labs/FLUX.1-schnell
