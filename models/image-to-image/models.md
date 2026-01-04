@@ -14,3 +14,17 @@ Repo Flux: XLabs-AI/flux-controlnet-collections (Đang phát triển)
 IP-Adapter: Dùng để copy phong cách hoặc khuôn mặt từ ảnh này sang ảnh khác.
 
 Repo: h94/IP-Adapter
+
+trùng với text to image
+
+
+
+### image to image:
+#### Để chạy FLUX trên 14GB VRAM mà vẫn còn dư bộ nhớ cho các tác vụ khác, bạn nên dùng thư viện bitsandbytes để load bản NF4.
+-> lllyasviel/flux1-dev-bnb-nf4
+
+-> black-forest-labs/FLUX.1-schnell
+
+#### Model này chạy rất mượt ở định dạng FP16 trên 14GB VRAM.
+-> stabilityai/stable-diffusion-3.5-medium
+
